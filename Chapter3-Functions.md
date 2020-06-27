@@ -1,6 +1,5 @@
+Listing 3-1 long function in FitNesse 一个糟糕的function
 ```java
-
-// Listing 3-1 long function in FitNesse 一个糟糕的function
 public static String testableHtml(
         PageData pageData,
         boolean includeSuiteSetup
@@ -62,8 +61,10 @@ public static String testableHtml(
     return pageData.getHtml();
 }
 
+```
 
-// Listing 3-2 第一次重构 simple method extractions + renaming + restructuring
+Listing 3-2 第一次重构 simple method extractions + renaming + restructuring
+```java
 public static String renderPageWithSetupsAndTeardowns(
         PageData pageData, boolean isSuite
 ) throws Exception {
@@ -79,9 +80,10 @@ public static String renderPageWithSetupsAndTeardowns(
 
     return pageData.getHtml();
 }
+```
 
-
-// Listing 3-3 第二次重构之后 进一步简化 Setup 和 Teardown的逻辑组合到一起
+Listing 3-3 第二次重构之后 进一步简化 Setup 和 Teardown的逻辑组合到一起
+```java
 /***
 step 1: Determining whether the page is a test page
 step 2: If so, including setups and teardowns
@@ -96,9 +98,10 @@ public static String renderPageWithSetupsAndTeardowns(
   // step 3
   return pageData.getHtml();
 }
+```
 
-
-// Listing 3-4 Payroll.java
+Listing 3-4 Payroll.java
+```java
 public Money calculatePay(Employee e)
         throws InvalidEmployeeType {
     switch (e.type) {
@@ -112,9 +115,10 @@ public Money calculatePay(Employee e)
             throw new InvalidEmployeeType(e.type);
     }
 }
+```
 
-
-// Listing 3-5  Employee and Factory 
+Listing 3-5  Employee and Factory 
+```java
 // 使用了抽象工厂设计模式 将case switch的逻辑处理放到工厂类实现中使得每个Employee在build之前都已经被分好类了
 public abstract class Employee {
     public abstract boolean isPayday();
@@ -143,9 +147,10 @@ public class EmployeeFactoryImpl implements
         }
     }
 }
+```
 
-
-// Listing 3-6 UserValidator.java 
+Listing 3-6 UserValidator.java 
+```java
 public class UserValidator {
     private Cryptographer cryptographer;
 
@@ -163,10 +168,12 @@ public class UserValidator {
         return false;
     }
 }
+```
 
-// Error Handling
-// Extract Try/Catch Blocks
-// delete function is all about error processing
+
+Error Handling extract Try/Catch Blocks
+delete function is all about error processing
+```java
 public void delete(Page page) {
     try {
         deletePageAndAllReferences(page);
@@ -184,9 +191,10 @@ private void deletePageAndAllReferences(Page page) throws Exception {
 private void logError(Exception e) {
     logger.log(e.getMessage());
 }
+```
 
-
-// Listing 3-7 SetupTeardownIncluder.java
+Listing 3-7 SetupTeardownIncluder.java
+```java
 package fitnesse.html;
 import fitnesse.responders.run.SuiteResponder;
 import fitnesse.wiki.*;

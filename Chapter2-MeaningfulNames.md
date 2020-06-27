@@ -33,15 +33,18 @@ const int WORK_DAYS_PER_WEEK = 5;
 // Pick One Word per Concept
 pick, fetch, get, retrieve是同义词，都表示抓取/获取的概念。确定使用其中的一个之后，不要随意替换
 
+
 // Use Solution/Problem Domain Names
 电商中的SKU，DAU
 设计模式 Factor
+
 
 // Add Meaningful Context	
 // wrong: 缺少必要的context 不方便理解
 firstName 
 // correct: 可以直接从命名中看出该变量表示地址中填写的姓名
 addrFirstName 
+
 
 // Class Name -> noun  Method Name -> verb
 // wrong 
@@ -51,11 +54,13 @@ String Account()
 class Account
 String getAccount()
 
+
 /*** NO: Avoid doing this to create good names ***/
 
 // Gratuitous Context
 GSDAccountAddress // GSD is an imaginary application
 GSDMailingAddress // it's a bad idea to prefix every class with GSD
+
 
 // Avoid Disinformation: leave false clues that obscure the meaning of code
 // wrong

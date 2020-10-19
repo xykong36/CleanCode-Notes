@@ -4,15 +4,27 @@
 
 https://stackoverflow.com/a/23032098
 
-Listing 6-1
-```java
 
+
+对比6-1 和 6-2来理解Data Abstraction
+6-1 直接将数据结构通过public data field暴露
+6-2 只暴露可以操作数据的方法，而不暴露数据结构，隐藏了内部实现 => 强制规定访问规则 可以读取某一个坐标的x值或y值，但必须同时设置一组坐标
+
+
+对于抽象的本质究竟是什么理解不足
+
+
+6-2 interface still unmistakably represents a data structure.
+
+Listing 6-1 Concrete Point
+```java
 public class Point {
   public double x;
   public double y;
 }
 ```
 
+Listing 6-2 Abstract Point
 ```java
 public interface Point {
   double getX(); 
@@ -24,9 +36,9 @@ public interface Point {
 }
 ```
 
-```
-对比objects 和 data structures区别的氯离子
 
+// 对比objects 和 data structures区别的例子
+```java
 public class Square {
     public Point topLeft;
     public double side;

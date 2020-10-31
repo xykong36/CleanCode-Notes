@@ -109,8 +109,9 @@ private static void readPreferences() {
 ```
 
 ### Dependent Functions
+
+调用者在上 被调用者跟在调用者的定义后面 这样不需要跳转到太远的地方就能够找到定义的函数
 Listing 5-5 WikiPageResponder.java
-// 调用者在上 被调用者在下方 不需要跳转到太远的地方就能够找到定义的函数
 ```java
 public class WikiPageResponder implements SecureResponder {
     protected WikiPage page;
@@ -166,7 +167,8 @@ public class WikiPageResponder implements SecureResponder {
 ```
 
 ### Conceptual Affinity
-// 同属于assertTrue()的所有method放到一起
+
+同属于assertTrue()的所有method放到一起
 ```java
 public class Assert {
     static public void assertTrue(String message, boolean condition) {
@@ -266,7 +268,9 @@ public class FitNesseExpediter implements ResponseSender
 }
 ```
 
-### Indentation 对比 语义相同 缩进不同
+### Indentation 
+
+对比 语义相同 缩进不同
 ```java
 public class FitNesseServer implements SocketServer { private FitNesseContext
 context; public FitNesseServer(FitNesseContext context) { this.context =

@@ -7,6 +7,7 @@
 * [Simple way to understand abstraction and encapsulation](https://stackoverflow.com/a/23032098)
 * [How much abstraction is too much?](https://stackoverflow.com/a/15467758/8629112)
 * [Difference between abstraction and encapsulation?](https://stackoverflow.com/a/743698/8629112)
+* [Why use getters and setters/accessors?](https://stackoverflow.com/a/1568230/8629112)
 
 ### Data Abstraction
 

@@ -3,7 +3,7 @@
 ### Vertical Openness Between Concepts
 
 Listing 5-1 BoldWidget.java
-// 合理使用空格进行分隔封包声明、导入声明和函数与函数之间
+合理使用空格进行分隔封包声明、导入声明和函数与函数之间
 
 ```java
 package fitnesse.wikitext.widgets;
@@ -31,25 +31,22 @@ public class BoldWidget extends ParentWidget {
 }
 ``` 
 
-Listing 5-2 BoldWidget.java
-// 和上面的5-1 进行对比 但是去掉了空格，可读性变差
+Listing 5-2 BoldWidget.java    
+对比List5-1 去掉了空格，可读性变差
+
 ```java
 package fitnesse.wikitext.widgets;
-
 import java.util.regex.*;
-
 public class BoldWidget extends ParentWidget {
     public static final String REGEXP = "’’’.+?’’’";
     private static final Pattern pattern = Pattern.compile("’’’(.+?)’’’",
             Pattern.MULTILINE + Pattern.DOTALL);
-
     public BoldWidget(ParentWidget parent, String text) throws Exception {
         super(parent);
         Matcher match = pattern.matcher(text);
         match.find();
         addChildWidgets(match.group(1));
     }
-
     public String render() throws Exception {
         StringBuffer html = new StringBuffer("<b>");
         html.append(childHtml()).append("</b>");
@@ -61,6 +58,7 @@ public class BoldWidget extends ParentWidget {
 ### Vertical Density
 
 List 5-3 反例 被comment不当分隔
+
 ```java
 public class ReporterConfig {
     /**
@@ -80,6 +78,7 @@ public class ReporterConfig {
 ```
 
 List 5-4 对比5-3 合理分隔 相关联的代码相互靠近
+
 ```java
 public class ReporterConfig {
     private String m_className;
@@ -110,8 +109,9 @@ private static void readPreferences() {
 
 ### Dependent Functions
 
-调用者在上 被调用者跟在调用者的定义后面 这样不需要跳转到太远的地方就能够找到定义的函数
+调用者在上 被调用者跟在调用者的定义后面 这样不需要跳转到太远的地方就能够找到定义的函数  
 Listing 5-5 WikiPageResponder.java
+
 ```java
 public class WikiPageResponder implements SecureResponder {
     protected WikiPage page;
@@ -169,6 +169,7 @@ public class WikiPageResponder implements SecureResponder {
 ### Conceptual Affinity
 
 同属于assertTrue()的所有method放到一起
+
 ```java
 public class Assert {
     static public void assertTrue(String message, boolean condition) {

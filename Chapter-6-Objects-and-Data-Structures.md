@@ -38,8 +38,28 @@ public interface Point {
 ```
 
 
+
+
+### Data/Object Anti-Symmetry
+
+OOP: 添加Data容易 修改难
+FP: 添加难 修改容易
+
+|         | OOP          | FP  |
+| ------------- |:-------------:| -----:|
+| 添加Data     | 容易 | 难 |
+| 修改Data      | 难      |   容易 |
+
+天然的一对矛盾 
+
+Procedural code(code using data structures) makes it easy to add new functions without changing the existing data structures.
+
+OO code makes it easy to add new classes without changing existing functions.
+
 对比objects 和 data structures区别的例子
 ```java
+
+// FP
 public class Square {
     public Point topLeft;
     public double side;
@@ -73,25 +93,8 @@ public class Geometry {
         throw new NoSuchShapeException();
     }
 }
-```
 
-### Data/Object Anti-Symmetry
-
-OOP: 添加Data容易 修改难
-FP: 添加难 修改容易
-
-|         | OOP          | FP  |
-| ------------- |:-------------:| -----:|
-| 添加Data     | 容易 | 难 |
-| 修改Data      | 难      |   容易 |
-
-天然的一对矛盾 
-
-Procedural code(code using data structures) makes it easy to add new functions without changing the existing data structures.
-
-OO code makes it easy to add new classes without changing existing functions.
-
-```java
+// OOP
 public class Square implements Shape {
     private Point topLeft;
     private double side;
